@@ -19,7 +19,6 @@ DataRange = [1:length(dataList)];
 Results_for_table = struct;
 %write here the path to your data
 path2 = '1DSFMEdata';
-%'C:/Users/ykasten/Documents/CVPR2020_SUBMITTED/T_6_7_SFM_CALIB/code/1DSFMEdata';
 
 for iii = DataRange
     
