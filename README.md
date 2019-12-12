@@ -46,8 +46,8 @@ mex buildTripletGraph.c
 We supply end-to-end code for the pipeline described in the paper.
 Important function:
 ```
-runAll.m - Script to run the pipline on the specified data sets. Outputs a table with the results and a .mat file that contains the camera parameters. The script generates table.csv.
-GetTableFiltered.m - Script to get the results on the reconstructed cameras as apears in the paper. The BA of Theia filters some of the cameras before BA. We keep the list at Final_names. The script uses the results which saved into 'results' folder. (need to run "runAll.m" before). The script generates tableFinal.csv.
+runAll.m (generates table.csv) - Script to run the pipline on the specified data sets. Outputs a table with the results and a .mat file that contains the camera parameters.
+GetTableFiltered.m (generates tableFinal.csv) - Script to get the results on the reconstructed cameras as apears in the paper. The BA of Theia filters some of the cameras before BA. We keep the list at Final_names. The script uses the results which saved into 'results' folder. (you need to run "runAll.m" before).
 
 
 
