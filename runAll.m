@@ -1,10 +1,12 @@
 
 clear
 
-dataList={  'Vienna_Cathedral', 'Piazza_del_Popolo','NYC_Library' ,'Alamo','Madrid_Metropolis' , 'Yorkminster',...
-    'Montreal_Notre_Dame','Tower_of_London','Ellis_Island','Notre_Dame'};
+%Uncomment this to run on all data sets
 
+% dataList={  'Vienna_Cathedral', 'Piazza_del_Popolo','NYC_Library' ,'Alamo','Madrid_Metropolis' , 'Yorkminster',...
+%     'Montreal_Notre_Dame','Tower_of_London','Ellis_Island','Notre_Dame'};
 
+dataList={  'Ellis_Island'};
 
 % Define the parameters of the model
 ParamOpt = struct; 
