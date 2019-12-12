@@ -1,5 +1,5 @@
 function [RF1,RF2,T1,T2,RD1,RD2,N]=GetFinalResults(dataset)
-load(sprintf('BA_names/%s.mat',dataset));
+load(sprintf('Final_names/%s.mat',dataset));
 load(sprintf('results/%s.mat',dataset));
 
 A=cellfun(@(x) x(8:end),namesList,'UniformOutput',false);
