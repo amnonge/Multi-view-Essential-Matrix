@@ -3,7 +3,7 @@
 Yoni Kasten* Amnon Geifman* Meirav Galun Ronen Basri (*equal contribution)
 
 
-MATLAB Mex Version 1.0 (2019-06-06)
+MATLAB Mex Version 1.0 (2019-12-12)
 Copyright (C) Yoni Kasten and Amnon Geifman, Weizmann Institute, 2019.
 Licensed for noncommercial research use only.
 
@@ -14,14 +14,15 @@ The code retrieves camera matrices given a set of pairwise essential matrices.
 
 For more information see:
 
-[[arXiv]](https://arxiv.org/abs/1904.02663)
-Please cite these paper if you use this code in an academic publication.
+[[Paper]](http://openaccess.thecvf.com/content_ICCV_2019/papers/Kasten_Algebraic_Characterization_of_Essential_Matrices_and_Their_Averaging_in_Multiview_ICCV_2019_paper.pdf)
+Please cite this paper if you use this code in an academic publication.
 ```
-@article{kasten2019algebraic,
-  title={Algebraic Characterization of Essential Matrices and Their Averaging in Multiview Settings},
-  author={Kasten, Yoni and Geifman, Amnon and Galun, Meirav and Basri, Ronen},
-  journal={arXiv preprint arXiv:1904.02663},
-  year={2019}
+@InProceedings{Kasten_2019_ICCV,
+	author = {Kasten, Yoni and Geifman, Amnon and Galun, Meirav and Basri, Ronen},
+	title = {Algebraic Characterization of Essential Matrices and Their Averaging in Multiview Settings},
+	booktitle = {The IEEE International Conference on Computer Vision (ICCV)},
+	month = {October},
+	year = {2019}
 }
 ```
 
@@ -30,9 +31,13 @@ Please cite these paper if you use this code in an academic publication.
 
 mex/C++ code:
 In order to use the code it is necessary to compile the mex functions.
-We supply compiled versions for Windows and Linux.
+We supply compiled versions for Windows 
 
-
+Compiling commands:
+```
+mex formexgraph6.c
+mex buildTripletGraph.c
+```
 
 
 
@@ -41,9 +46,8 @@ We supply compiled versions for Windows and Linux.
 We supply end-to-end code for the pipeline described in the paper.
 Important function:
 ```
-runall.m- Script to run the pipline on the specified data sets. Outputs a table with the results and a .mat file that contains the camera parameters
-
-GetTableAfterBA.m - Script to get the results on the reconstructed cameras as apears in the paper. This subset of camera are the reconstructed cameras got from the BA. The script uses the results which saved into 'results' folder.
+runAll.m - Script to run the pipline on the specified data sets. Outputs a table with the results and a .mat file that contains the camera parameters
+GetTableFiltered.m - Script to get the results on the reconstructed cameras as apears in the paper. The BA of Theia filters some of the cameras before BA. We keep the list at Final_names. The script uses the results which saved into 'results' folder. (need to run "runAll.m" before).
 
 
 
@@ -62,12 +66,14 @@ M- tracks matrix
 
 ## Acknowledgement 
 We use the following 3rdparties code:
-3rdparty\fromPPSFM - evaluation and self calibration code from "Practical projective structure
-from motion (p2sfm)" (ICCV 2017). Their self calibration code implements the paper "Autocalibration via rank-constrained estimation of the
-absolute quadric" (CVPR 2007), and uses the libraries "GloptiPoly 3" and "SeDuMi 1.3"
+```
+SimpleTransScaleRemove.m
+GlobalSOdCorrectLeft
+getBestError
+```
+This files are from LUD's code. (Author: Onur Ozyesil). 
+We use them to find the best alignment of the results with the ground truth.
 
-3rdparty\vgg_code - implementation of basic functions from the book "Multiple View Geometry in Computer Vision" (2004) downloaded from:
-https://www.robots.ox.ac.uk/~vgg/hzbook/code/
 
 ## Contact 
 For any query, contact : 
@@ -90,5 +96,5 @@ Weizmann Institute of Science
 ## Version History
 
 
-* Version 1.0 (2019-06-06)
+* Version 1.0 (2019-12-12)
    Initial Release
